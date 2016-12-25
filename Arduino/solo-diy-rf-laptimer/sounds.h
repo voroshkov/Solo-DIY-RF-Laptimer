@@ -50,7 +50,13 @@ uint16_t toneSeq_SetThreshold [TONE_SEQ_SET_THRESH_LEN] = { 1000, 100, 1500, 100
 uint16_t toneSeq_ClearThreshold [TONE_SEQ_CLR_THRESH_LEN] = { 1500, 100, 1000, 100 };
 
 #define TONE_SEQ_CLICK_LEN 2
-uint16_t toneSeq_Click [TONE_SEQ_CLICK_LEN] = { 500, 20 };
+uint16_t toneSeq_Click [TONE_SEQ_CLICK_LEN] = { 60, 10 };
+
+#define TONE_SEQ_START_RACE_LEN 2
+uint16_t toneSeq_StartRace [TONE_SEQ_START_RACE_LEN] = { 1500, 700 };
+
+#define TONE_SEQ_END_RACE_LEN 10
+uint16_t toneSeq_EndRace [TONE_SEQ_END_RACE_LEN] = { 1500, 120, 0, 30, 1500, 120, 0, 30, 1500, 120 };
 
 // ----------------------------------------------------------------------------
 void startPlayingTones() {
@@ -78,8 +84,20 @@ void playClearThresholdTones() {
     startPlayingTones();
 }
 // ----------------------------------------------------------------------------
-void playClickTone() {
+void playClickTones() {
     curToneSeq = toneSeq_Click;
     lastToneSeqIndex = TONE_SEQ_CLICK_LEN - 1;
+    startPlayingTones();
+}
+// ----------------------------------------------------------------------------
+void playStartRaceTones() {
+    curToneSeq = toneSeq_StartRace;
+    lastToneSeqIndex = TONE_SEQ_START_RACE_LEN - 1;
+    startPlayingTones();
+}
+// ----------------------------------------------------------------------------
+void playEndRaceTones() {
+    curToneSeq = toneSeq_EndRace;
+    lastToneSeqIndex = TONE_SEQ_END_RACE_LEN - 1;
     startPlayingTones();
 }

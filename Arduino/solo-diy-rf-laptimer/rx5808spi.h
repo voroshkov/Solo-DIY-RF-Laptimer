@@ -84,7 +84,6 @@ void setChannelModule(uint8_t channel) {
     // A0=0, A1=0, A2=0, A3=1, RW=0, D0-19=0
     SERIAL_ENABLE_HIGH();
     delayMicroseconds(1);
-    //delay(2);
     SERIAL_ENABLE_LOW();
 
     SERIAL_SENDBIT0();
@@ -101,7 +100,6 @@ void setChannelModule(uint8_t channel) {
 
     // Clock the data in
     SERIAL_ENABLE_HIGH();
-    //delay(2);
     delayMicroseconds(1);
     SERIAL_ENABLE_LOW();
 
@@ -142,7 +140,6 @@ void setChannelModule(uint8_t channel) {
     // Finished clocking data in
     SERIAL_ENABLE_HIGH();
     delayMicroseconds(1);
-    //delay(2);
 
     digitalLow(slaveSelectPin);
     digitalLow(spiClockPin);
