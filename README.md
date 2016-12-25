@@ -5,10 +5,10 @@ When you become a seasoned drone racer, you want to know how fast you are. Using
 ##Features
 - No additional equipment besides 5.8GHz Video Transmitter required on a drone.
 - Measure lap times with 1ms resolution (in theory; need to perform live tests).
-- Android application for interaction with the Laptimer via Bluetooth.
+- Android application for controlling the Laptimer via Bluetooth.
 - Compatible with [EasyRaceLapTimer](https://github.com/polyvision/EasyRaceLapTimer) software v.0.6 (can act as a VTx sensor).
 - 5V * 250 mA power consumption
-- Low cost (around $16), compared to similar solutions available on market.
+- Low cost (around $16, excluding power supply), compared to similar solutions available on market.
 
 ##Limitations
 - Tracks up to 100 laps.
@@ -39,7 +39,7 @@ In order to get the RX5808 to use SPI you will need to open it and remove a sing
 For older versions of RX5808 use [these instructions](https://github.com/markohoepken/rx5808_pro_osd/wiki/rs5808-spi-patch).
 
 ###Wiring
-Wiring schematic:
+Parts may be connected directly without using any additional components:
 
 <img src="docs/img/wiring.png" alt="Wiring schematic" width="600">
 
@@ -70,7 +70,7 @@ Download the **Solo_DIY_RF_Laptimer.apk** file from Android folder and install o
 ####App User Guide
 Application startup screen:
 
-<img src="docs/img/androidAppStartup.png" alt="Application startup screen" width="400">
+<img src="docs/img/androidAppStartup.png" alt="Application startup screen" width="350">
 
 - **Connect**: tap to connect to Laptimer Bluetooth module.
 - **Raceband Channel #**: use +/- to tune the laptimer to next/prev channel.
@@ -79,15 +79,15 @@ Application startup screen:
 - **Capture Threshold**: tap to capture currently measured RSSI value as a threshold.
 - **Start Race**: tap to start tracking laps.
 
-When connected, application polls the Laptimer device each 30ms and displays current settings and measurements:
+When connected, the application polls the Laptimer device each 30ms and displays current settings and measurements:
 
-<img src="docs/img/androidAppConnected.png" alt="Application operation screen" width="400">
+<img src="docs/img/androidAppConnected.png" alt="Application operation screen" width="350">
 
 Note the **RSSI** label below the **Disconnect** button - it shows current RSSI reading, which might be useful for monitoring VTx channels or positioning the device.
 
 Race mode:
 
-<img src="docs/img/androidAppRace.png" alt="Application race mode screen" width="400">
+<img src="docs/img/androidAppRace.png" alt="Application race mode screen" width="350">
 
 In a Race mode you cannot change Channel, Min Lap Time or Threshold to prevent from occasional loss of the race results. Up to 100 laps can be tracked. But the more lap times are recorded, the longer it takes to retrieve the data from Laptimer to Android App. It doesn't affect the accuracy, but might introduce delays in the app performance.
 
