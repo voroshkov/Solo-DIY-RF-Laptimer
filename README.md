@@ -35,18 +35,18 @@ Used parts:
 
 In order to get the RX5808 to use SPI (which is required for this project) you will need to open it and remove a single SMD resistor.
 
-![RX5808 spi patch](docs/img/rx5808-new-top.jpg)
+<img src="docs/img/rx5808-new-top.jpg" alt="RX5808 spi patch" width="">
 
 For older versions of RX5808 use [these instructions](https://github.com/markohoepken/rx5808_pro_osd/wiki/rs5808-spi-patch).
 
 ###Wiring
 Wiring schematic:
 
-![Wiring schematic](docs/img/wiring.png)
+<img src="docs/img/wiring.png" alt="Wiring schematic" width="">
 
 It seems to work fine being connected this way, however adding 100 Ω resistors in line on SPI wires (Arduino pins 10, 11, 12) is a good idea to prevent possible glitches with channel selection:
 
-![Wiring with resistors](docs/img/wiringResistors.png)
+<img src="docs/img/wiringResistors.png" alt="Wiring with resistors" width="">
 
 ###Assembly
 Correct positioning of RX5808 module against the finish gate area is vital for correct measurements.
@@ -55,7 +55,7 @@ I tried using different types of antennas and shields with RX5808 to achieve the
 
 Here's how my prototype looks:
 
-![Prototype Assembly](docs/img/assembly.png)
+<img src="docs/img/assembly.png" alt="Prototype Assembly" width="">
 
 ##Software
 ###Arduino
@@ -64,14 +64,14 @@ Download the project from Arduino folder, open **solo-diy-rf-laptimer.ino** file
 ###Android App
 Download the **Solo_DIY_RF_Laptimer.apk** file from Android folder and install on your Android device or use the following QR code to download:
 
-![QR code](docs/img/apkDownloadQRcode.png )
+<img src="docs/img/apkDownloadQRcode.png " alt="QR code" width="">
 
 (Make sure to allow installation from unknown sources in your Android device settings).
 
 ####App User Guide
 Application startup screen:
 
-![Application startup screen](docs/img/androidAppStartup.png )
+<img src="docs/img/androidAppStartup.png " alt="Application startup screen" width="">
 
 - **Connect**: tap to connect to Laptimer Bluetooth module.
 - **Raceband Channel #**: use +/- to tune the laptimer to next/prev channel.
@@ -82,13 +82,13 @@ Application startup screen:
 
 When connected, application polls the Laptimer device each 30ms and displays current settings and measurements:
 
-![Application operation screen](docs/img/androidAppConnected.png )
+<img src="docs/img/androidAppConnected.png " alt="Application operation screen" width="">
 
 Note the **RSSI** label below the **Disconnect** button - it shows current RSSI reading, which might be useful for monitoring VTx channels or positioning the device.
 
 Race mode:
 
-![Application race mode screen](docs/img/androidAppRace.png )
+<img src="docs/img/androidAppRace.png " alt="Application race mode screen" width="">
 
 In a Race mode you cannot change Channel, Min Lap Time or Threshold to prevent from occasional loss of the race results. Up to 100 laps can be tracked. But the more lap times are recorded, the longer it takes to retrieve the data from Laptimer to Android App. It doesn't affect the accuracy, but might introduce delays in the app performance.
 
@@ -103,7 +103,7 @@ When you stop the race, Laptimer device immediately clears saved lap times, but 
  6. Start Race in the app.
  7. Fly the track and see the lap times being captured.
 
-![Device placement and setup](docs/img/placementAndSetup.png )
+<img src="docs/img/placementAndSetup.png " alt="Device placement and setup" width="">
 
 Also I'd consider shielding the Laptimer device with a piece of metal on one side where drones are approaching from. It might increase the accuracy by reducing the VTx signal strength before drone is inside a gate.
 
