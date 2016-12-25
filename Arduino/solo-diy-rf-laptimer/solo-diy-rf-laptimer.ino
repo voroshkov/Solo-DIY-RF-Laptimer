@@ -145,6 +145,7 @@ void loop() {
             if (allowEdgeGeneration) {  // we haven't fired event for this drone proximity case yet
                 allowEdgeGeneration = 0;
                 gen_rising_edge(pinRaspiInt);  //generate interrupt for EasyRaceLapTimer software
+                digitalLow(led);
 
                 uint32_t now = millis();
                 uint32_t diff = now - lastMilliseconds;
@@ -156,12 +157,10 @@ void loop() {
                         }
                         lastMilliseconds = now;
                         playLapTones(); // during the race play tone sequence even if no more laps can be logged
-                        digitalLow(led);
                     }
                 }
                 else {
                     playLapTones(); // if not within the race, then play once per case
-                    digitalLow(led);
                 }
             }
         }
@@ -231,40 +230,39 @@ void loop() {
                 lastMilliseconds = millis();
                 newLapIndex = 0;
                 isRaceStarted = 1;
-                playClickTone();
+                playStartRaceTones();
                 break;
             case CONTROL_END_RACE: // end race
                 isRaceStarted = 0;
                 newLapIndex = 0;
-                playClickTone();
+                playEndRaceTones();
                 break;
             case CONTROL_DEC_MIN_LAP: // decrease minLapTime
                 decMinLap();
-                playClickTone();
+                playClickTones();
                 break;
             case CONTROL_INC_MIN_LAP: // increase minLapTime
                 incMinLap();
-                playClickTone();
+                playClickTones();
                 break;
             case CONTROL_DEC_CHANNEL: // decrease channel
                 decChannel();
-                playClickTone();
+                playClickTones();
                 break;
             case CONTROL_INC_CHANNEL: // increase channel
                 incChannel();
-                playClickTone();
+                playClickTones();
                 break;
             case CONTROL_DEC_THRESHOLD: // decrease threshold
                 decThreshold();
-                playClickTone();
+                playClickTones();
                 break;
             case CONTROL_INC_THRESHOLD: // increase threshold
                 incThreshold();
-                playClickTone();
+                playClickTones();
                 break;
             case CONTROL_SET_THRESHOLD: // set threshold
                 setThreshold();
-                playClickTone();
                 break;
             case CONTROL_DATA_REQUEST: // request data
                 sendData = 1;
