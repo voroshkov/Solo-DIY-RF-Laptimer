@@ -29,6 +29,15 @@ The Laptimer device measures a VTx signal strength (RSSI value) and compares it 
  - Piezo buzzer (5V, without built-in generator) - optional
  - 5V power supply (for example 2-4S LiPo with 5V BEC)
 
+###Bluetooth module setup
+Make sure your bluetooth module baud rate is set to 115200 (use any of numerous tutorials on internet). Generalized steps:
+
+1. Connect HC-06 -> USB-UART Adapter -> PC
+2. Open Arduino IDE, set FTDI COM port, run Serial Monitor
+3. Send command: "AT+BAUD8" (module replies "OK115200")
+
+You might also like to change BT device name and default PIN (which is "1234") using commands "AT+NAMEdevicename" and "AT+PINxxxx" respectively.
+
 ###RX5808 SPI patch (required)
 (copied from [sheaivey/rx5808-pro-diversity](https://github.com/sheaivey/rx5808-pro-diversity) repo)
 
