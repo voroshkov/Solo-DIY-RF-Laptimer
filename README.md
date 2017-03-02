@@ -1,3 +1,7 @@
+----
+###NOTE: this project is outdated and won't be supported. Please switch to the improved solution - [Chorus RF Laptimer](https://github.com/voroshkov/Chorus-RF-Laptimer)
+----
+
 #Solo DIY RF Laptimer
 DIY lap timing solution for a lonely drone racer.
 When you become a seasoned drone racer, you want to know how fast you are. Using the Laptimer you can catch moments of passing the start/finish gates using just the signal of a Video Transmitter installed on your drone (no additional equipment on a drone is required).
